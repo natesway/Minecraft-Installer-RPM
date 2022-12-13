@@ -43,13 +43,4 @@ rpmfile=$(find . -name *.rpm)
 clear
 echo "########################################################################################################"
 echo ${rpmfile} has been built successfully.
-echo If you wish to install ${rpmfile} or update your current installation,
-echo press any key and enter your password
-read -n1 -r -p "########################################################################################################" key
-sudo clear
-echo Installing...
-sleep 2s
-sudo rpm -e minecraft-launcher
-clear
-sudo rpm -ivh ${rpmfile}
-echo Finished.
+echo  "########################################################################################################"
