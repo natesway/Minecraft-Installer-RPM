@@ -25,7 +25,7 @@ jobs:
         run: sudo cp -r configs/rpm-gpg /etc/pki/
 
       - name: Unpacking + Repacking popos rootfs
-        run: sudo bash unpack_iso.sh
+        run: sudo bash minecraft-installer.sh
 
       - name: Generating release tag
         id: tag
@@ -35,7 +35,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           tag_name: ${{ steps.tag.outputs.release_tag }}
-          name: Automated rootfs extraction - ${{ steps.tag.outputs.release_tag }}
+          name: Minecraft RPM - ${{ steps.tag.outputs.release_tag }}
           body: |
             These are completely **unmodified** rootfs archives for the depthboot builder script.  
             Please download official images at 
