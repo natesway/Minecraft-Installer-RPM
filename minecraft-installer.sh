@@ -36,7 +36,9 @@ specfile=$(find . -name *.spec)
 rpmbuild --target ${arch} -bb ${specfile} --buildroot ${buildrt}
 cd ./${arch}
 rpmfile=$(find . -name *.rpm)
+mkdir /tmp
 cp ./${rpmfile} ../${rpmfile}
+cp ./${rpmfile} /tmp/${rpmfile}
 rm -r ../${arch}
 cd ../
 rpmfile=$(find . -name *.rpm)
